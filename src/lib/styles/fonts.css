@@ -1,0 +1,7 @@
+/* src/lib/styles/fonts.css */
+@font-face {
+  font-family: 'SDMiSaeng';
+  font-weight: 300;
+  font-style: normal;
+  src: url('/fonts/SDMiSaeng.ttf') format('ttf');
+}

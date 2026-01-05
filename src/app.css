@@ -1,2 +1,34 @@
+/* src/app.css */
+@import './lib/styles/fonts.css';
 @import 'tailwindcss';
 @plugin '@tailwindcss/typography';
+
+@layer base {
+  body { font-family: 'GmarketSans'; }
+}
+/* ===============================
+   Mobile One Page Snap Layout
+   =============================== */
+html, body {
+  width: 100%;
+  margin: 0;
+}
+
+.onepage {
+  height: 93vh;
+  overflow-x: hidden; /* 좌우 스크롤 완전 차단 */
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+/* 각 섹션 = 한 화면 */
+.onepage > section {
+  min-height: 95vh;
+  scroll-snap-align: start;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
