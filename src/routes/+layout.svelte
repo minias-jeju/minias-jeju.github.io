@@ -1,9 +1,19 @@
 <script lang="ts">
-  /**
-   * 전역 스타일 단일 진실원천
-   * app.css는 이 파일에서만 import 해야 합니다.
-   */
   import '../app.css';
+  import { SITE } from '$lib/config/site';
 </script>
+
+<svelte:head>
+  <title>{SITE.name} – {SITE.slogan}</title>
+  <meta name="description" content={SITE.slogan} />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content={SITE.name} />
+  <meta property="og:title" content={`${SITE.name} – ${SITE.slogan}`} />
+  <meta property="og:description" content={SITE.slogan} />
+  <meta property="og:url" content={`https://${SITE.domain}`} />
+  <meta property="og:image" content={`https://${SITE.domain}/hero/hero2.png`} />
+  <meta name="twitter:card" content="summary_large_image" />
+</svelte:head>
 
 <slot />
