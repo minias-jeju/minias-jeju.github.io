@@ -28,8 +28,8 @@ jobs:
         env:
             BASE_PATH: '/${{ github.event.repository.name }}'
         run: npm run build
-      - name: Disable Jekyll
-        run: touch docs/.nojekyll        
+      # 🔥 여기서 강제로 .nojekyll 삽입
+      - run: echo > docs/.nojekyll 
       - name: Upload Artifacts
         uses: actions/upload-pages-artifact@v3
         with:
