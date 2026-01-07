@@ -1,4 +1,3 @@
-<!-- /src/lib/components/product.svelte -->
 <script lang="ts">
   import { onMount } from 'svelte';
   import { PRODUCTS } from '$lib/data/products';
@@ -7,16 +6,34 @@
   let index = 0;
   let timer: any;
 
+  // ───────── 기본 이동 ─────────
   const next = () => index = (index + 1) % PRODUCTS.length;
   const prev = () => index = (index - 1 + PRODUCTS.length) % PRODUCTS.length;
 
+  // ───────── 자동 슬라이드 ─────────
   onMount(() => {
     timer = setInterval(next, 6000);
     return () => clearInterval(timer);
   });
+
+  // ───────── 터치 슬라이드 ─────────
+  let startX = 0;
+
+  function onTouchStart(e: TouchEvent) {
+    startX = e.touches[0].clientX;
+  }
+
+  function onTouchEnd(e: TouchEvent) {
+    const endX = e.changedTouches[0].clientX;
+    const diff = startX - endX;
+    if (Math.abs(diff) > 50) diff > 0 ? next() : prev();
+  }
 </script>
 
-<section id="product" class="hero">
+<section id="product" class="hero"
+  on:touchstart|passive={onTouchStart}
+  on:touchend|passive={onTouchEnd}
+>
   <div class="slides">
     {#each PRODUCTS as p, i (p.id)}
       <article class="slide {i === index ? 'active' : ''}">
@@ -30,11 +47,10 @@
 </section>
 
 <style>
-  /* 섹션 전체가 슬라이드 영역 */
   .hero {
     position: relative;
     width: 100vw;
-    height: 100vh;         /* 판매 섹션이 화면을 꽉 채움 */
+    height: 100vh;
     overflow: hidden;
   }
 
@@ -44,7 +60,6 @@
     position: relative;
   }
 
-  /* 각 슬라이드 = 섹션 전체 */
   .slide {
     position: absolute;
     inset: 0;
@@ -69,12 +84,12 @@
     top: 50%;
     transform: translateY(-50%);
     font-size: 48px;
-    background: rgba(255,255,255,.8);
+    background: rgba(255,255,255,.85);
     border: none;
     border-radius: 50%;
     width: 56px;
-    height: 56px;
     cursor: pointer;
+    z-index: 10;
   }
 
   .nav.left { left: 24px; }

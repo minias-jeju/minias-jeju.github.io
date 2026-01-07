@@ -12,7 +12,10 @@
   <meta property="og:title" content={`${SITE.name} – ${SITE.slogan}`} />
   <meta property="og:description" content={SITE.slogan} />
   <meta property="og:url" content={`https://${SITE.domain}`} />
-  <meta property="og:image" content={`https://${SITE.domain}/hero/hero2.png`} />
+  <meta property="og:image" content={`https://${SITE.domain}/orange-og.jpg`} />
+  <meta property="og:image:secure_url" content={`https://${SITE.domain}/orange-og.jpg`}>
+  <meta property="og:image:width" content="1024" />
+  <meta property="og:image:height" content="1024" />  
   <meta name="twitter:card" content="summary_large_image" />
 </svelte:head>
 

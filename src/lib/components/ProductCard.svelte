@@ -41,7 +41,7 @@
   padding: 0 80px;
 }
 .info {
-  min-width: 420px;
+  min-width: 300px;
 }
 /* ===== Mobile ===== */
 @media (max-width: 768px) {

@@ -2,17 +2,17 @@
   import { onMount } from 'svelte';
 
   const row1 = [
-    { logo: '/images/partner/jeju.png' },
+    { logo: '/images/partner/jeju.jpg' },
     { logo: '/images/partner/jjnh.jpg' },
      { logo: '/images/partner/hansum.jpg' },
-    { logo: '/images/partner/cjdaehan.png' }
+    { logo: '/images/partner/cjdaehan.jpg' }
   ];
 
   const row2 = [
     { logo: '/images/partner/hansum.jpg' },    
-    { logo: '/images/partner/cjdaehan.png' },    
+    { logo: '/images/partner/cjdaehan.jpg' },    
     { logo: '/images/partner/jjnh.jpg' },
-    { logo: '/images/partner/jeju.png' },
+    { logo: '/images/partner/jeju.jpg' },
   ];
 
   let track1: HTMLDivElement;

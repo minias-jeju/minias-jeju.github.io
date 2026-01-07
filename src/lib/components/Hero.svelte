@@ -2,9 +2,9 @@
   import { onMount, onDestroy } from 'svelte';
 
   const images = [
-    '/images/hero/hero1.png',
-    '/images/hero/hero2.png',
-    '/images/hero/hero3.png'
+    '/images/hero/hero1.jpg',
+    '/images/hero/hero2.jpg',
+    '/images/hero/hero3.jpg'
   ];
 
   let current = 0;

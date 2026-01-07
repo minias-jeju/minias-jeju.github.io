@@ -16,7 +16,7 @@
   <title>{p.name} | {SITE.name}</title>
   <meta property="og:title" content={`${p.name} | ${SITE.name}`} />
   <meta property="og:description" content={p.desc} />
-  <meta property="og:image" content={`https://${SITE.domain}${p.image}`} />
+  <meta property="og:image" content={`https://${SITE.domain}/${p.image}`} />
 </svelte:head>
 
 <Header />
